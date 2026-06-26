@@ -21,7 +21,13 @@
 
 ## ✨ Live Demo
 
-> Deploy link goes here once hosted (Vercel / Netlify)
+🔗 **[https://aether-os-kohl.vercel.app/](https://aether-os-kohl.vercel.app/)**
+
+---
+
+## 🎬 Demo Video
+
+📹 **[Watch on Google Drive](https://drive.google.com/file/d/14BkJzocHnVqaZEErdFDFT0j-76cFpg2-/view?usp=sharing)**
 
 ---
 
