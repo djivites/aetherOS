@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-arctic-powder: #F1F6F4;
+  --color-forsythia: #FFC801;
+  --color-nocturnal-expedition: #114C5A;
+  --color-mystic-mint: #D9E8E2;
+  --color-deep-saffron: #FF9932;
+  --color-oceanic-noir: #172B36;
+}
+
+body {
+  color: var(--color-arctic-powder);
+  background-color: var(--color-oceanic-noir);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #172B36;
+}
+::-webkit-scrollbar-thumb {
+  background: #114C5A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC801;
+}
+
+/* GPU-accelerated utility for transitions */
+.gpu-animate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Custom focus ring for accessibility */
+.focus-ring:focus-visible {
+  outline: 2px solid #FFC801;
+  outline-offset: 4px;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-100px) translateX(20px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.floating-particle {
+  animation: floatParticle var(--float-duration, 8s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+/* Card Light Sweep Animation */
+@keyframes cardSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.animate-sweep {
+  animation: cardSweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Gauge Pulsing Animation */
+@keyframes gaugePulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px transparent);
+  }
+  50% {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px rgba(255, 200, 1, 0.15));
+  }
+}
+
+.animate-gauge-pulse {
+  animation: gaugePulse 3.5s ease-in-out infinite;
+}
+
+/* Needle Wobble Animation */
+@keyframes needleWobble {
+  0%, 100% {
+    transform: rotate(var(--needle-angle)) translateY(0);
+  }
+  50% {
+    transform: rotate(calc(var(--needle-angle) + 0.8deg)) translateY(-0.2px);
+  }
+}
+
+.animate-needle {
+  animation: needleWobble 2.5s ease-in-out infinite;
+  transform-origin: 80px 85px;
+}
+
+/* Scan Line Animation */
+@keyframes scanLine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.15;
+  }
+  85% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(450%);
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scanLine 6s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+
